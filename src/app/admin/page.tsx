@@ -14,7 +14,7 @@ export default async function AdminPage() {
   const initialUsers = [
     { id: 1, name: "Ali Yılmaz", email: "ali@example.com", role: "user" as const },
     { id: 2, name: "Ayşe Demir", email: "ayse@example.com", role: "user" as const },
-    { id: 3, name: "Admin Kullanıcı", email: "admin@example.com", role: "admin" as const },
+    { id: 3, name: "Admin Kullanıcı", email: "administrator@example.com", role: "admin" as const },
   ];
 
   return <AdminPanel initialUsers={initialUsers} />;
