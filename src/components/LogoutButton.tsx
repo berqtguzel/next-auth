@@ -10,6 +10,8 @@ export default function LogoutButton() {
     const returnTo = process.env.NEXT_PUBLIC_AUTH0_RETURN_TO!;
 
     window.location.href = `${auth0Domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(returnTo)}`;
+    console.log(auth0Domain, clientId, returnTo);
+
   };
 
   return (
