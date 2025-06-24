@@ -18,7 +18,7 @@ This project demonstrates a secure authentication and authorization system built
 
 ## 🌐 **Live Demo**
 
-[View Live Project](https://next-auth-eta-silk.vercel.app)
+[View Live Project](https://next-auth-flame-zeta.vercel.app/)
 
 ---
 
