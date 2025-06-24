@@ -30,7 +30,7 @@ export default function LoginPage() {
           className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
           <AiOutlineLock className="w-6 h-6" />
-          Farklı Hesapla Giriş Yap
+         Giriş yap
         </button>
 
         <p className="mt-6 text-sm text-gray-700 justify-center flex flex-col items-center text-center">
