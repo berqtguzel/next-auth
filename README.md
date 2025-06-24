@@ -16,10 +16,16 @@ This project demonstrates a secure authentication and authorization system built
 
 ---
 
+## 🌐 **Live Demo**
+
+[View Live Project](https://next-auth-eta-silk.vercel.app)
+
+---
+
 ## 📦 **Project Setup**
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://next-auth-eta-silk.vercel.app
-
+git clone https://github.com/berqtguzel/next-auth.git
+cd next-auth
