@@ -45,7 +45,7 @@ export default function LoginPage() {
         </p>
 
         <div className="mt-8 w-full flex flex-col items-center  gap-2">
-          <span className="text-xs text-gray-400">© {new Date().getFullYear()} Şirketiniz. Tüm hakları saklıdır.</span>
+          <span className="text-xs text-gray-400">© {new Date().getFullYear()} Berat Güzel. Tüm hakları saklıdır.</span>
         </div>
       </div>
     </div>

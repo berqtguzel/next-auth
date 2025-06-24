@@ -53,7 +53,7 @@ export default async function DashboardPage() {
         </div>
       </main>
       <footer className="w-full py-4 flex flex-col items-center bg-white/70 backdrop-blur-md border-t border-white/30 mt-8">
-        <span className="text-xs text-gray-500">© {new Date().getFullYear()} Şirketiniz. Tüm hakları saklıdır.</span>
+        <span className="text-xs text-gray-500">© {new Date().getFullYear()} Berat Güzel. Tüm hakları saklıdır.</span>
         <span className="text-xs text-gray-400 mt-1">Powered by Next.js & Tailwind CSS</span>
       </footer>
     </div>
