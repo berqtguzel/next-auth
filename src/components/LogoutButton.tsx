@@ -3,15 +3,22 @@ import { signOut } from "next-auth/react";
 
 export default function LogoutButton() {
   const handleLogout = async () => {
-    await signOut({ redirect: false });
+    try {
+      await signOut({ redirect: false });
 
-    const auth0Domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN!;
-    const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID!;
-    const returnTo = process.env.NEXT_PUBLIC_AUTH0_RETURN_TO!;
+      const auth0Domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN;
+      const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
+      const returnTo = process.env.NEXT_PUBLIC_AUTH0_RETURN_TO;
 
-    window.location.href = `${auth0Domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(returnTo)}`;
-    console.log(auth0Domain, clientId, returnTo);
+      if (!auth0Domain || !clientId || !returnTo) {
+        console.error("Logout config missing");
+        return;
+      }
 
+      window.location.href = `${auth0Domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(returnTo)}`;
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
   };
 
   return (
