@@ -105,7 +105,7 @@ export default function AdminPanel({ initialUsers }: AdminPanelProps) {
             </tbody>
           </table>
         </div>
-        {/* Mobil için blok görünüm */}
+ 
         <div className="block sm:hidden space-y-4">
           {users.length === 0 ? (
             <div className="py-6 text-center text-gray-400 bg-white rounded-xl shadow">Hiç kullanıcı yok.</div>
