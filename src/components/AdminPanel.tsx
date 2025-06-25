@@ -43,13 +43,13 @@ export default function AdminPanel({ initialUsers }: AdminPanelProps) {
         <h1 className="text-2xl sm:text-4xl font-extrabold text-pink-700 mb-6 sm:mb-8 text-center tracking-tight">Admin Paneli</h1>
         {/* Masaüstü için klasik tablo, mobilde blok görünüm */}
         <div className="hidden sm:block">
-          <table className="w-full text-left border-separate border-spacing-y-2 text-base">
+          <table className="w-full table-fixed text-left border-separate border-spacing-y-2 text-base">
             <thead>
               <tr className="bg-pink-100 rounded-xl">
-                <th className="py-3 px-4 font-bold text-gray-700 rounded-l-xl">Ad Soyad</th>
-                <th className="py-3 px-4 font-bold text-gray-700">E-posta</th>
-                <th className="py-3 px-4 font-bold text-gray-700">Rol</th>
-                <th className="py-3 px-4 font-bold text-gray-700 rounded-r-xl">İşlem</th>
+                <th className="py-3 px-4 font-bold text-gray-700 rounded-l-xl w-1/4 max-w-xs truncate">Ad Soyad</th>
+                <th className="py-3 px-4 font-bold text-gray-700 w-1/3 max-w-xs truncate">E-posta</th>
+                <th className="py-3 px-4 font-bold text-gray-700 w-1/6 max-w-[100px] truncate">Rol</th>
+                <th className="py-3 px-4 font-bold text-gray-700 rounded-r-xl w-1/4 max-w-xs truncate">İşlem</th>
               </tr>
             </thead>
             <tbody>
@@ -60,9 +60,9 @@ export default function AdminPanel({ initialUsers }: AdminPanelProps) {
               ) : (
                 users.map((user) => (
                   <tr key={user.id} className="bg-white rounded-xl shadow hover:bg-pink-50 transition">
-                    <td className="py-3 px-4 text-gray-900 font-medium align-middle">{user.name}</td>
-                    <td className="py-3 px-4 text-gray-800 align-middle">{user.email}</td>
-                    <td className="py-3 px-4 align-middle">
+                    <td className="py-3 px-4 text-gray-900 font-medium align-middle max-w-xs truncate whitespace-nowrap">{user.name}</td>
+                    <td className="py-3 px-4 text-gray-800 align-middle max-w-xs truncate whitespace-nowrap">{user.email}</td>
+                    <td className="py-3 px-4 align-middle max-w-[100px] truncate whitespace-nowrap">
                       <span className={
                         user.role === "admin"
                           ? "px-3 py-1 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 text-white text-xs font-bold shadow"
@@ -77,7 +77,7 @@ export default function AdminPanel({ initialUsers }: AdminPanelProps) {
                           : "Kullanıcı"}
                       </span>
                     </td>
-                    <td className="py-3 px-4 flex gap-2 items-center align-middle">
+                    <td className="py-3 px-4 flex gap-2 items-center align-middle whitespace-nowrap">
                       {user.role !== "admin" ? (
                         <>
                           <select
