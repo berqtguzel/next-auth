@@ -8,14 +8,18 @@ export default function LogoutButton() {
 
       const auth0Domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN;
       const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
-      const returnTo = process.env.NEXT_PUBLIC_AUTH0_RETURN_TO;
+      const returnTo =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000"
+          : process.env.NEXT_PUBLIC_AUTH0_RETURN_TO;
 
       if (!auth0Domain || !clientId || !returnTo) {
-        console.error("Logout config missing");
+        console.error("Missing Auth0 logout config");
         return;
       }
 
-      window.location.href = `${auth0Domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(returnTo)}`;
+      const logoutUrl = `${auth0Domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(returnTo)}`;
+      window.location.href = logoutUrl;
     } catch (err) {
       console.error("Logout error:", err);
     }
