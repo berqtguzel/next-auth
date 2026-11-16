@@ -20,6 +20,8 @@ const errorMessages: Record<string, string> = {
   OAuthSignin: "Auth0 giriş sayfası açılamadı. Lütfen yeniden deneyin.",
 };
 
+const fallbackErrorMessage = "Giriş tamamlanamadı. Lütfen yeniden deneyin.";
+
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const params = await searchParams;
   const callbackUrl = getSafeCallbackUrl(params.callbackUrl);
@@ -31,7 +33,9 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
   const errorCode = Array.isArray(params.error) ? params.error[0] : params.error;
   const errorMessage = errorCode
-    ? errorMessages[errorCode] ?? "Giriş tamamlanamadı. Lütfen yeniden deneyin."
+    ? Object.hasOwn(errorMessages, errorCode)
+      ? errorMessages[errorCode]
+      : fallbackErrorMessage
     : "";
 
   return (
