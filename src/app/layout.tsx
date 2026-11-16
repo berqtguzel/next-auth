@@ -1,0 +1,19 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Auth0 ile Güvenli Giriş",
+  description: "NextAuth.js ve Auth0 ile güvenli oturum yönetimi",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="tr">
+      <body className="antialiased">{children}</body>
+    </html>
+  );
+}
