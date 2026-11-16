@@ -3,6 +3,10 @@ import Auth0Provider from "next-auth/providers/auth0";
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    error: "/login",
+    signIn: "/login",
+  },
   session: {
     strategy: "jwt",
   },
