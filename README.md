@@ -1,5 +1,7 @@
 # Auth0 ile Güvenli Oturum Yönetimi
 
+[Canlı demo](https://next-auth-cloudflare-demo.berqtguzel.workers.dev)
+
 Bu proje, Auth0 ile kimlik doğrulama, NextAuth.js v4 ile JWT tabanlı oturum yönetimi ve Next.js middleware ile korunan rota erişimi sunan bir Next.js uygulamasıdır.
 
 ## Kullanılan Teknolojiler
